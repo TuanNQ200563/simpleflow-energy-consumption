@@ -25,7 +25,7 @@ def build_encoder():
     return encoder
 
 
-def transform_data(
+def main(
     data: Union[
         pd.DataFrame,
         tuple[pd.DataFrame, pd.DataFrame]
