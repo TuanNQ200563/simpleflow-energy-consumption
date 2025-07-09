@@ -21,13 +21,19 @@ def train_model(
         max_features=max_features,
         seed=seed,
     )
+
+    hyperparams = {
+        "n_models": n_models,
+        "max_features": max_features,
+        "seed": seed,
+    }
     
     # note: river train using dict
     for x, y in zip(X_train, y_train):
         x_dict = {f"x{i}": xi for i, xi in enumerate(x)}
         model.learn_one(x_dict, y)
         
-    return model
+    return model, hyperparams
 
 
 def predict(
